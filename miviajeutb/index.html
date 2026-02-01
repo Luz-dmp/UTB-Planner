@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
   <title>UTB Planner 💜 Lu Edition</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,13 +30,13 @@
 
     body {
       font-family: 'Quicksand', system-ui, sans-serif;
-      background:
-        radial-gradient(ellipse at 12% 8%,  var(--lav3) 0%, transparent 45%),
-        radial-gradient(ellipse at 88% 18%, var(--lav-soft) 0%, transparent 50%),
-        var(--bg);
+      background: radial-gradient(ellipse at 12% 8%, var(--lav3) 0%, transparent 45%),
+                  radial-gradient(ellipse at 88% 18%, var(--lav-soft) 0%, transparent 50%),
+                  var(--bg);
       color: var(--text);
       min-height: 100vh;
       line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
     }
 
     header {
@@ -44,325 +44,205 @@
       top: 0;
       z-index: 100;
       backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      background: rgba(253,250,255,0.82);
+      background: rgba(253,250,255,0.88);
       border-bottom: 1px solid var(--stroke);
     }
 
-    .wrap {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 16px 18px;
-    }
+    .wrap { max-width: 1280px; margin: 0 auto; padding: 14px 16px; }
 
     .topbar {
       display: flex;
       align-items: center;
       justify-content: space-between;
       flex-wrap: wrap;
-      gap: 16px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
       gap: 12px;
     }
 
+    .brand { display: flex; align-items: center; gap: 10px; }
+
     .logo {
-      width: 48px; height: 48px;
-      border-radius: 16px;
+      width: 44px; height: 44px; border-radius: 14px;
       background: linear-gradient(135deg, var(--lav), var(--lav2));
-      color: white;
-      font-family: 'Unbounded', cursive;
-      font-weight: 700;
-      font-size: 24px;
-      display: grid; place-items: center;
-      box-shadow: var(--shadow-sm);
+      color: white; font-family: 'Unbounded', cursive; font-weight: 700; font-size: 22px;
+      display: grid; place-items: center; box-shadow: var(--shadow-sm);
     }
 
-    .title h1 { font-family: 'Unbounded', cursive; font-size: 22px; letter-spacing: -0.2px; }
-    .title p  { font-size: 13px; color: var(--muted); font-weight: 600; }
+    .title h1 { font-family: 'Unbounded', cursive; font-size: 20px; letter-spacing: -0.2px; }
+    .title p { font-size: 12px; color: var(--muted); font-weight: 600; }
 
-    .actions { display: flex; gap: 10px; flex-wrap: wrap; }
+    .actions { display: flex; gap: 8px; flex-wrap: wrap; }
 
     button, .btn {
-      border: none;
-      border-radius: 14px;
-      padding: 10px 16px;
-      font-weight: 650;
-      cursor: pointer;
-      transition: all 0.18s ease;
-      font-family: inherit;
+      border: none; border-radius: 12px; padding: 9px 14px;
+      font-weight: 650; cursor: pointer; transition: all 0.18s ease;
+      font-family: inherit; font-size: 14px;
     }
 
-    .btn-outline {
-      background: rgba(255,255,255,0.75);
-      border: 1px solid var(--stroke);
-      color: var(--text);
-    }
+    .btn-outline { background: rgba(255,255,255,0.8); border: 1px solid var(--stroke); color: var(--text); }
     .btn-outline:hover { background: white; transform: translateY(-1px); }
 
     .btn-primary {
-      background: linear-gradient(135deg, var(--lav), #9f85f5);
-      color: white;
-      box-shadow: 0 6px 16px rgba(161,140,250,0.28);
+      background: linear-gradient(135deg, var(--lav), #9f85f5); color: white;
+      box-shadow: 0 5px 14px rgba(161,140,250,0.25);
     }
-    .btn-primary:hover { transform: translateY(-1.5px); box-shadow: 0 10px 24px rgba(161,140,250,0.36); }
+    .btn-primary:hover { transform: translateY(-1.5px); box-shadow: 0 8px 20px rgba(161,140,250,0.35); }
 
-    .btn-danger {
-      background: rgba(250,80,110,0.08);
-      color: #d32f2f;
-      border: 1px solid rgba(244,67,54,0.22);
-    }
+    .btn-danger { background: rgba(250,80,110,0.09); color: #d32f2f; border: 1px solid rgba(244,67,54,0.2); }
 
-    .tabs {
-      display: flex;
-      gap: 8px;
-      margin-top: 16px;
-      flex-wrap: wrap;
-    }
+    .tabs { display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
 
     .tab {
-      padding: 10px 18px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.65);
-      border: 1px solid var(--stroke);
-      color: var(--muted);
-      font-weight: 650;
-      cursor: pointer;
-      transition: 0.2s;
+      padding: 9px 16px; border-radius: 999px;
+      background: rgba(255,255,255,0.7); border: 1px solid var(--stroke);
+      color: var(--muted); font-weight: 650; cursor: pointer; transition: 0.2s; font-size: 14px;
     }
 
     .tab.active {
-      background: linear-gradient(135deg, rgba(177,156,249,0.22), rgba(210,200,255,0.18));
-      color: var(--text);
-      border-color: rgba(177,156,249,0.5);
+      background: linear-gradient(135deg, rgba(177,156,249,0.25), rgba(210,200,255,0.2));
+      color: var(--text); border-color: rgba(177,156,249,0.55);
     }
 
-    main {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 24px 18px 80px;
-    }
+    main { max-width: 1280px; margin: 0 auto; padding: 20px 16px 80px; }
 
     .card {
-      background: var(--card);
-      border: 1px solid var(--stroke);
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow);
-      padding: 20px;
-      backdrop-filter: blur(8px);
+      background: var(--card); border: 1px solid var(--stroke);
+      border-radius: var(--radius-lg); box-shadow: var(--shadow);
+      padding: 18px; backdrop-filter: blur(8px);
     }
 
-    h2 { font-family: 'Unbounded', cursive; font-size: 20px; margin-bottom: 8px; }
-    .subtitle { color: var(--muted); font-weight: 600; font-size: 14px; }
+    h2 { font-family: 'Unbounded', cursive; font-size: 19px; margin-bottom: 8px; }
+    .subtitle { color: var(--muted); font-weight: 600; font-size: 13px; }
 
-    /* Horario */
+    /* HORARIO RESPONSIVE */
     .calendar-wrap {
-      margin-top: 16px;
+      margin-top: 14px;
       overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
       border-radius: var(--radius);
       border: 1px solid var(--stroke);
-      background: rgba(255,255,255,0.6);
+      background: rgba(255,255,255,0.65);
     }
 
     .cal-grid {
       display: grid;
-      grid-template-columns: 70px repeat(6, minmax(160px, 1fr));
-      min-width: 1100px;
+      grid-template-columns: 54px repeat(6, minmax(120px, 1fr));
+      min-width: 780px;
     }
 
     .cal-head {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: rgba(253,250,255,0.92);
-      backdrop-filter: blur(12px);
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(253,250,255,0.94); backdrop-filter: blur(12px);
     }
 
     .cal-head .cell {
-      padding: 12px 8px;
-      font-weight: 700;
-      color: var(--muted);
-      font-size: 13px;
-      text-align: center;
-      border-bottom: 1px solid var(--stroke);
+      padding: 10px 6px; font-weight: 700; color: var(--muted);
+      font-size: 12px; text-align: center; border-bottom: 1px solid var(--stroke);
     }
 
-    .time-cell { justify-content: flex-end; padding-right: 12px; color: var(--muted); font-weight: 700; }
+    .time-cell { justify-content: flex-end; padding-right: 8px; color: var(--muted); font-weight: 700; font-size: 12px; }
 
-    .day-col {
-      position: relative;
-      min-height: 720px;
-      border-right: 1px solid var(--stroke);
-    }
+    .day-col { position: relative; min-height: 720px; border-right: 1px solid var(--stroke); }
 
-    .hour-row {
-      height: 48px;
-      border-bottom: 1px dashed rgba(140,110,200,0.12);
-    }
+    .hour-row { height: 44px; border-bottom: 1px dashed rgba(140,110,200,0.14); }
 
     .class-block {
-      position: absolute;
-      left: 8px; right: 8px;
-      border-radius: 16px;
-      padding: 10px 12px;
-      color: #1e1435;
-      font-weight: 700;
-      font-size: 13.5px;
-      box-shadow: 0 10px 24px rgba(80,40,140,0.14);
-      border: 1px solid rgba(255,255,255,0.65);
-      cursor: pointer;
-      transition: transform 0.15s, box-shadow 0.15s;
+      position: absolute; left: 6px; right: 6px;
+      border-radius: 14px; padding: 8px 10px; color: #1e1435;
+      font-weight: 700; font-size: 13px;
+      box-shadow: 0 8px 20px rgba(80,40,140,0.14);
+      border: 1px solid rgba(255,255,255,0.7);
+      cursor: pointer; transition: transform 0.15s, box-shadow 0.15s;
       overflow: hidden;
     }
 
-    .class-block:hover {
-      transform: scale(1.015);
-      box-shadow: 0 14px 32px rgba(80,40,140,0.20);
-    }
+    .class-block:hover { transform: scale(1.02); box-shadow: 0 12px 28px rgba(80,40,140,0.20); }
 
-    .class-block .top {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 6px;
-    }
+    .class-block .top { display: flex; justify-content: space-between; align-items: flex-start; gap: 4px; flex-wrap: wrap; }
 
     .class-block .tag {
-      font-size: 11px;
-      padding: 3px 9px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.65);
-      border: 1px solid rgba(255,255,255,0.8);
+      font-size: 10px; padding: 3px 7px; border-radius: 999px;
+      background: rgba(255,255,255,0.7); border: 1px solid rgba(255,255,255,0.85);
       white-space: nowrap;
+    }
+
+    @media (max-width: 768px) {
+      .cal-grid { grid-template-columns: 50px repeat(6, minmax(100px, 1fr)); min-width: 700px; }
+      .cal-head .cell, .time-cell { font-size: 11px; padding: 8px 4px; }
+      .class-block { font-size: 12px; padding: 7px 9px; }
+      .class-block .tag { font-size: 9px; padding: 2px 6px; }
+    }
+
+    @media (max-width: 480px) {
+      .cal-grid { grid-template-columns: 44px repeat(6, minmax(80px, 1fr)); min-width: 580px; }
+      .class-block { font-size: 11px; padding: 6px 8px; }
+      .top { flex-direction: column; align-items: flex-start; }
     }
 
     /* Malla */
     .semestre {
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--stroke);
-      background: rgba(255,255,255,0.7);
-      padding: 18px;
-      margin-bottom: 20px;
-      box-shadow: var(--shadow-sm);
+      border-radius: var(--radius-lg); border: 1px solid var(--stroke);
+      background: rgba(255,255,255,0.75); padding: 16px;
+      margin-bottom: 18px; box-shadow: var(--shadow-sm);
     }
 
-    .semestre h3 {
-      font-family: 'Unbounded', cursive;
-      font-size: 17px;
-      margin-bottom: 14px;
-    }
+    .semestre h3 { font-family: 'Unbounded', cursive; font-size: 17px; margin-bottom: 12px; }
 
-    .malla-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-      gap: 12px;
-    }
+    .malla-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px; }
 
     .materia {
-      border-radius: 16px;
-      border: 1px solid var(--stroke);
-      background: rgba(240,225,255,0.35);
-      padding: 14px;
-      cursor: pointer;
-      transition: all 0.16s;
+      border-radius: 14px; border: 1px solid var(--stroke);
+      background: rgba(240,225,255,0.4); padding: 12px;
+      cursor: pointer; transition: all 0.16s;
     }
 
     .materia:hover { transform: translateY(-2px); box-shadow: var(--shadow-sm); }
 
-    .materia.done {
-      background: rgba(177,156,249,0.18);
-      border-color: rgba(177,156,249,0.4);
-    }
+    .materia.done { background: rgba(177,156,249,0.2); border-color: rgba(177,156,249,0.45); }
+    .materia.done .name { text-decoration: line-through; opacity: 0.9; }
+    .materia.locked { opacity: 0.5; filter: grayscale(0.4); pointer-events: none; }
 
-    .materia.done .name { text-decoration: line-through; opacity: 0.92; }
-
-    .materia.locked {
-      opacity: 0.48;
-      filter: grayscale(0.4);
-      pointer-events: none;
-    }
-
-    .materia .top {
-      display: flex;
-      justify-content: space-between;
-      font-weight: 700;
-      font-size: 13px;
-      color: #4a3782;
-    }
-
-    .materia .name {
-      margin-top: 8px;
-      font-weight: 650;
-      line-height: 1.3;
-    }
+    .materia .top { display: flex; justify-content: space-between; font-weight: 700; font-size: 12.5px; color: #4a3782; }
+    .materia .name { margin-top: 6px; font-weight: 650; line-height: 1.3; font-size: 13.5px; }
 
     /* Modal */
     .modal {
-      position: fixed;
-      inset: 0;
-      background: rgba(30,20,60,0.52);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 200;
-      padding: 20px;
+      position: fixed; inset: 0; background: rgba(30,20,60,0.55);
+      display: none; align-items: center; justify-content: center;
+      z-index: 200; padding: 16px;
     }
 
     .modal.show { display: flex; }
 
     .modal-box {
-      width: min(620px, 96%);
-      max-height: 92vh;
-      overflow-y: auto;
-      background: var(--card);
-      border-radius: var(--radius-lg);
-      box-shadow: 0 30px 90px rgba(40,20,80,0.28);
-      border: 1px solid rgba(255,255,255,0.6);
-      backdrop-filter: blur(16px);
-      padding: 24px;
+      width: min(580px, 96%); max-height: 90vh; overflow-y: auto;
+      background: var(--card); border-radius: var(--radius-lg);
+      box-shadow: 0 28px 80px rgba(40,20,80,0.26);
+      border: 1px solid rgba(255,255,255,0.65);
+      backdrop-filter: blur(16px); padding: 20px;
     }
 
-    .modal h3 { font-family: 'Unbounded', cursive; font-size: 22px; margin-bottom: 16px; }
+    .modal h3 { font-family: 'Unbounded', cursive; font-size: 20px; margin-bottom: 14px; }
 
-    .form-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    @media (max-width: 580px) { .form-grid { grid-template-columns: 1fr; } }
 
-    @media (max-width: 600px) { .form-grid { grid-template-columns: 1fr; } }
+    .field { display: flex; flex-direction: column; gap: 5px; }
 
-    .field { display: flex; flex-direction: column; gap: 6px; }
-
-    .field label { font-size: 13px; font-weight: 700; color: var(--muted); }
+    .field label { font-size: 12.5px; font-weight: 700; color: var(--muted); }
 
     input, select {
-      padding: 12px 14px;
-      border-radius: 14px;
-      border: 1px solid var(--stroke);
-      background: rgba(255,255,255,0.85);
-      font-family: inherit;
-      font-weight: 600;
+      padding: 10px 12px; border-radius: 12px;
+      border: 1px solid var(--stroke); background: rgba(255,255,255,0.88);
+      font-family: inherit; font-weight: 600; font-size: 14px;
     }
 
-    .modal-footer {
-      display: flex;
-      justify-content: flex-end;
-      gap: 12px;
-      margin-top: 24px;
-      flex-wrap: wrap;
-    }
+    .modal-footer { display: flex; justify-content: flex-end; gap: 10px; margin-top: 20px; flex-wrap: wrap; }
 
-    footer {
-      text-align: center;
-      padding: 40px 20px;
-      color: var(--muted);
-      font-size: 14px;
-      font-weight: 600;
-    }
+    footer { text-align: center; padding: 36px 16px; color: var(--muted); font-size: 13px; font-weight: 600; }
+
+    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 14px; margin-top: 14px; }
+    .stat-card { text-align: center; padding: 14px; border-radius: 14px; background: rgba(177,156,249,0.12); border: 1px solid rgba(177,156,249,0.3); }
+    .stat-number { font-size: 28px; font-family: 'Unbounded'; font-weight: 700; }
   </style>
 </head>
 <body>
@@ -374,13 +254,14 @@
         <div class="logo">U</div>
         <div class="title">
           <h1>UTB Planner</h1>
-          <p>Horario + Malla + Progreso • Lavanda vibes 💜</p>
+          <p>Horario + Malla • Lavanda vibes 💜</p>
         </div>
       </div>
       <div class="actions">
         <button class="btn btn-outline" id="btn-savio">🌐 Savio</button>
-        <button class="btn btn-outline" id="btn-export">💾 Exportar</button>
-        <button class="btn btn-danger" id="btn-reset">🗑 Reset</button>
+        <button class="btn btn-outline" id="btn-export">💾 Exportar JSON</button>
+        <button class="btn btn-outline" id="btn-import">📥 Importar JSON</button>
+        <button class="btn btn-danger" id="btn-reset">🗑 Reset todo</button>
       </div>
     </div>
 
@@ -394,69 +275,66 @@
 
 <main>
 
-  <!-- INICIO -->
   <section id="tab-home">
-    <div class="card" style="margin-bottom:24px;">
-      <h2>¡Hola Lu! 💜</h2>
-      <p class="subtitle">Aquí organizas tu semestre sin morir en el intento</p>
-      <div style="margin:20px 0; display:flex; flex-wrap:wrap; gap:12px;">
-        <button class="btn btn-primary" onclick="goTab('horario')">Ver / editar horario</button>
-        <button class="btn btn-primary" onclick="goTab('malla')">Ver / marcar malla</button>
+    <div class="card" style="margin-bottom:20px;">
+      <h2>¡Hola Luz! 💜</h2>
+      <p class="subtitle">Tu planner para sobrevivir (y ganar) Ingeniería Mecatrónica</p>
+      <div style="margin:16px 0; display:flex; flex-wrap:wrap; gap:10px;">
+        <button class="btn btn-primary" onclick="goTab('horario')">Horario</button>
+        <button class="btn btn-primary" onclick="goTab('malla')">Malla</button>
       </div>
     </div>
 
     <div class="card">
       <h2>Progreso rápido</h2>
-      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:16px; margin-top:16px;">
-        <div style="text-align:center; padding:16px; border-radius:16px; background:rgba(177,156,249,0.1); border:1px solid rgba(177,156,249,0.3);">
-          <div style="font-size:32px; font-family:'Unbounded'; font-weight:700;" id="stat-clases">0</div>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number" id="stat-clases">0</div>
           <div style="color:var(--muted); font-weight:600;">clases</div>
         </div>
-        <div style="text-align:center; padding:16px; border-radius:16px; background:rgba(177,156,249,0.1); border:1px solid rgba(177,156,249,0.3);">
-          <div style="font-size:32px; font-family:'Unbounded'; font-weight:700;" id="stat-aprob">0</div>
-          <div style="color:var(--muted); font-weight:600;">materias aprobadas</div>
+        <div class="stat-card">
+          <div class="stat-number" id="stat-aprob">0</div>
+          <div style="color:var(--muted); font-weight:600;">aprobadas</div>
         </div>
-        <div style="text-align:center; padding:16px; border-radius:16px; background:rgba(177,156,249,0.1); border:1px solid rgba(177,156,249,0.3);">
-          <div style="font-size:32px; font-family:'Unbounded'; font-weight:700;" id="stat-prog">0%</div>
-          <div style="color:var(--muted); font-weight:600;">progreso malla</div>
+        <div class="stat-card">
+          <div class="stat-number" id="stat-prog">0%</div>
+          <div style="color:var(--muted); font-weight:600;">progreso</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- HORARIO -->
   <section id="tab-horario" style="display:none;">
     <div class="card">
-      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:16px;">
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:14px;">
         <div>
           <h2>Horario semanal</h2>
-          <p class="subtitle">Click en bloque → editar / eliminar / detalles</p>
+          <p class="subtitle">Toca un bloque para editarlo o borrarlo</p>
         </div>
-        <button class="btn btn-primary" onclick="openClassModal()">+ Agregar clase</button>
+        <button class="btn btn-primary" onclick="openClassModal()">+ Clase</button>
       </div>
 
       <div class="calendar-wrap">
         <div class="cal-grid cal-head">
           <div class="cell">Hora</div>
-          <div class="cell">Lunes</div>
-          <div class="cell">Martes</div>
-          <div class="cell">Miér</div>
-          <div class="cell">Jueves</div>
-          <div class="cell">Viernes</div>
-          <div class="cell">Sábado</div>
+          <div class="cell">Lun</div>
+          <div class="cell">Mar</div>
+          <div class="cell">Mié</div>
+          <div class="cell">Jue</div>
+          <div class="cell">Vie</div>
+          <div class="cell">Sáb</div>
         </div>
         <div class="cal-grid" id="calBody"></div>
       </div>
     </div>
   </section>
 
-  <!-- MALLA -->
   <section id="tab-malla" style="display:none;">
     <div class="card">
-      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:16px;">
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:14px;">
         <div>
-          <h2>Malla curricular</h2>
-          <p class="subtitle">Click para (des)marcar aprobada • Click derecho → ver prereqs</p>
+          <h2>Malla Mecatrónica</h2>
+          <p class="subtitle">Toca para marcar/desmarcar • Mantén presionado = ver prerreqs</p>
         </div>
       </div>
       <div id="malla-container"></div>
@@ -465,124 +343,88 @@
 
 </main>
 
-<footer>
-  Hecho con 💜 para que el semestre sea un poquito más llevadero
-</footer>
+<footer>Hecho con café y ganas de que apruebes todo 💜</footer>
 
-<!-- MODAL -->
 <div class="modal" id="modal">
   <div class="modal-box" id="modal-content"></div>
 </div>
 
-<script>
-// =============================================
-// CONFIGURACIÓN GENERAL
-// =============================================
+<input type="file" id="import-file" accept=".json" style="display:none;">
 
-const STORAGE_KEY = "utb_lu_planner_v3";
+<script>
+const STORAGE_KEY = "utb_lu_planner_v4";
 
 const DAYS = ["Lun","Mar","Mié","Jue","Vie","Sáb"];
+
 const START_HOUR = 6;
 const END_HOUR   = 21;
-const SLOT_HEIGHT = 48;
+const SLOT_HEIGHT = 44;
 
-// =============================================
-// MALLA COMPLETA
-// =============================================
-
-const malla = [
-  // Semestre 1
-  { code:"CHUM-H01A", nombre:"TALLER DE COMPRENSIÓN LECTORA", sem:1, cr:2, prereq:[] },
-  { code:"CBAS-M01A", nombre:"CÁLCULO DIFERENCIAL", sem:1, cr:4, prereq:[] },
-  { code:"CBAS-M02A", nombre:"MATEMÁTICAS BÁSICAS", sem:1, cr:3, prereq:[] },
-  { code:"CBAS-Q01A", nombre:"QUÍMICA GENERAL", sem:1, cr:3, prereq:[] },
-  { code:"ECOU-U01A", nombre:"DESARROLLO UNIVERSITARIO", sem:1, cr:2, prereq:[] },
-  { code:"IMEC-D01A", nombre:"EXPRESIÓN GRÁFICA", sem:1, cr:2, prereq:[] },
-  { code:"IMTR-B01A", nombre:"SEMINARIO DE ING. MECATRÓNICA", sem:1, cr:1, prereq:[] },
-  { code:"ISCO-C02A", nombre:"FUNDAMENTOS DE PROGRAMACIÓN", sem:1, cr:3, prereq:[] },
-
-  // Semestre 2
-  { code:"CHUL-LE3A", nombre:"LENGUA EXTRANJERA III", sem:2, cr:2, prereq:[] },
-  { code:"CBAS-F01A", nombre:"FÍSICA MECÁNICA", sem:2, cr:4, prereq:["CBAS-M01A","CBAS-M02A"] },
-  { code:"CBAS-M03A", nombre:"CÁLCULO INTEGRAL", sem:2, cr:4, prereq:["CBAS-M01A"] },
-  { code:"CBAS-M04A", nombre:"ÁLGEBRA LINEAL", sem:2, cr:3, prereq:[] },
-  { code:"IMTR-M01A", nombre:"TALLER DE MECATRÓNICA", sem:2, cr:2, prereq:["IMTR-B01A"] },
-  { code:"ISCO-C03A", nombre:"PROGRAMACIÓN", sem:2, cr:3, prereq:["ISCO-C02A"] },
-
-  // Semestre 3
-  { code:"CHUL-LE4A", nombre:"LENGUA EXTRANJERA IV", sem:3, cr:2, prereq:["CHUL-LE3A"] },
-  { code:"CHUM-H02A", nombre:"TALLER DE ESCRITURA ACADÉMICA", sem:3, cr:2, prereq:[] },
-  { code:"CBAS-E01A", nombre:"ESTADÍSTICA Y PROBABILIDAD", sem:3, cr:3, prereq:[] },
-  { code:"CBAS-F02A", nombre:"FÍSICA ELECTRICIDAD Y MAGNETISMO", sem:3, cr:4, prereq:["CBAS-M03A","CBAS-F01A"] },
-  { code:"CBAS-M05A", nombre:"CÁLCULO VECTORIAL", sem:3, cr:4, prereq:["CBAS-M03A","CBAS-M04A"] },
-  { code:"IETR-F02A", nombre:"SISTEMAS DIGITALES I", sem:3, cr:3, prereq:["ISCO-C02A"] },
-
-  // Semestre 4
-  { code:"CHUL-LE5A", nombre:"LENGUA EXTRANJERA V", sem:4, cr:2, prereq:["CHUL-LE4A"] },
-  { code:"CHUM-H03A", nombre:"CONSTITUCIÓN POLÍTICA", sem:4, cr:2, prereq:[] },
-  { code:"CBAS-F03A", nombre:"FÍSICA CALOR Y ONDAS", sem:4, cr:4, prereq:["CBAS-F02A","CBAS-M04A"] },
-  { code:"CBAS-M06A", nombre:"ECUACIONES DIFERENCIALES Y EN", sem:4, cr:4, prereq:["CBAS-M05A"] },
-  { code:"IELE-F03A", nombre:"CIRCUITOS ELÉCTRICOS I", sem:4, cr:3, prereq:["CBAS-F02A"] },
-  { code:"IMEC-D03A", nombre:"ESTÁTICA", sem:4, cr:3, prereq:["CBAS-F01A","CBAS-M04A"] },
-
-  // Semestre 5
-  { code:"IETR-F03A", nombre:"SEÑALES Y SISTEMAS", sem:5, cr:3, prereq:["CBAS-M06A"] },
-  { code:"IMEC-D04A", nombre:"DINÁMICA", sem:5, cr:3, prereq:["IMEC-D03A"] },
-  { code:"IMEC-F08A", nombre:"TERMODINÁMICA Y FLUIDOS", sem:5, cr:3, prereq:["CBAS-M06A"] },
-  { code:"IMEC-M01A", nombre:"MATERIALES I", sem:5, cr:3, prereq:["CBAS-Q01A"] },
-  { code:"ISCO-C07A", nombre:"PROCESAMIENTO NUMÉRICO", sem:5, cr:3, prereq:["ISCO-C03A","CBAS-M06A"] },
-
-  // Semestre 6
-  { code:"AEMP-G04A", nombre:"CREATIVIDAD Y EMPRENDIMIENTO", sem:6, cr:2, prereq:[] },
-  { code:"IETR-C01A", nombre:"CONTROL I", sem:6, cr:3, prereq:["IETR-F03A"] },
-  { code:"IETR-F04A", nombre:"ELECTRÓNICA I", sem:6, cr:3, prereq:["IELE-F03A"] },
-  { code:"IMEC-D06A", nombre:"RESISTENCIAS DE MATERIALES", sem:6, cr:3, prereq:["IMEC-D03A"] },
-  { code:"IMEC-M03A", nombre:"TECNOLOGÍA DE FABRICACIÓN", sem:6, cr:3, prereq:["IMEC-M01A"] },
-
-  // Semestre 7
-  { code:"CHUM-HU1A", nombre:"ELECTIVA DE HUMANIDADES I", sem:7, cr:2, prereq:[] },
-  { code:"ECON-M12A", nombre:"FORMULACIÓN Y EVALUACIÓN DE PR", sem:7, cr:3, prereq:["CBAS-E01A"] },
-  { code:"IETR-D03A", nombre:"SISTEMAS EMBEBIDOS", sem:7, cr:3, prereq:["IETR-F02A"] },
-  { code:"IMTR-A01A", nombre:"SENSORES E INSTRUMENTACIÓN", sem:7, cr:3, prereq:["IETR-F04A","IMEC-D06A","IETR-F03A"] },
-  { code:"IMTR-A02A", nombre:"SISTEMAS AUTOMÁTICOS DE PRODUCCIÓN", sem:7, cr:3, prereq:["IMEC-F08A","IETR-F02A","IMTR-M01A"] },
-  { code:"IMTR-EC1A", nombre:"ELECTIVA COMPLEMENTARIA I", sem:7, cr:2, prereq:[] },
-
-  // Semestre 8
-  { code:"CHUM-H05A", nombre:"CIUDADANÍA GLOBAL", sem:8, cr:2, prereq:[] },
-  { code:"IETR-C04A", nombre:"ELECTRÓNICA DE POTENCIA", sem:8, cr:3, prereq:["IETR-F04A"] },
-  { code:"IMTR-A03A", nombre:"ROBÓTICA", sem:8, cr:3, prereq:["IMEC-D04A","IETR-C01A"] },
-  { code:"IMTR-C01A", nombre:"SISTEMAS MECATRÓNICOS PROGRAMABLES", sem:8, cr:3, prereq:["IELE-F03A","IETR-F02A","IMTR-M01A"] },
-  { code:"IMTR-EC2A", nombre:"ELECTIVA COMPLEMENTARIA II", sem:8, cr:2, prereq:[] },
-  { code:"IMTR-P01A", nombre:"PROYECTO DE INGENIERÍA I", sem:8, cr:2, prereq:[] },
-
-  // Semestre 9
-  { code:"CHUM-H04A", nombre:"ÉTICA", sem:9, cr:2, prereq:[] },
-  { code:"IMTR-A04A", nombre:"CONTROL INTELIGENTE", sem:9, cr:3, prereq:["IETR-C01A","IMTR-C01A"] },
-  { code:"IMTR-D01A", nombre:"DISEÑOS MECATRÓNICOS", sem:9, cr:3, prereq:["IMTR-A01A","IMTR-C01A","IMTR-A03A"] },
-  { code:"IMTR-ECA3", nombre:"ELECTIVA COMPLEMENTARIA III", sem:9, cr:2, prereq:[] },
-  { code:"IMTR-ECA4", nombre:"ELECTIVA COMPLEMENTARIA IV", sem:9, cr:2, prereq:[] },
-  { code:"IMTR-P02A", nombre:"PROYECTO DE INGENIERÍA II", sem:9, cr:2, prereq:["IMTR-P01A"] },
-
-  // Semestre 10
-  { code:"CHUM-HU2A", nombre:"ELECTIVA DE HUMANIDADES II", sem:10, cr:2, prereq:[] },
-  { code:"IIND-EE1A", nombre:"ELECTIVA EMPRESARIAL", sem:10, cr:2, prereq:[] },
-  { code:"IMTR-P03A", nombre:"PRÁCTICA PROFESIONAL", sem:10, cr:6, prereq:[] }
+let malla = [
+  {code:"CHUM-H01A",nombre:"TALLER DE COMPRENSIÓN LECTORA",sem:1,cr:2,prereq:[]},
+  {code:"CBAS-M01A",nombre:"CÁLCULO DIFERENCIAL",sem:1,cr:4,prereq:[]},
+  {code:"CBAS-M02A",nombre:"MATEMÁTICAS BÁSICAS",sem:1,cr:3,prereq:[]},
+  {code:"CBAS-Q01A",nombre:"QUÍMICA GENERAL",sem:1,cr:3,prereq:[]},
+  {code:"ECOU-U01A",nombre:"DESARROLLO UNIVERSITARIO",sem:1,cr:2,prereq:[]},
+  {code:"IMEC-D01A",nombre:"EXPRESIÓN GRÁFICA",sem:1,cr:2,prereq:[]},
+  {code:"IMTR-B01A",nombre:"SEMINARIO DE ING. MECATRÓNICA",sem:1,cr:1,prereq:[]},
+  {code:"ISCO-C02A",nombre:"FUNDAMENTOS DE PROGRAMACIÓN",sem:1,cr:3,prereq:[]},
+  {code:"CHUL-LE3A",nombre:"LENGUA EXTRANJERA III",sem:2,cr:2,prereq:[]},
+  {code:"CBAS-F01A",nombre:"FÍSICA MECÁNICA",sem:2,cr:4,prereq:["CBAS-M01A","CBAS-M02A"]},
+  {code:"CBAS-M03A",nombre:"CÁLCULO INTEGRAL",sem:2,cr:4,prereq:["CBAS-M01A"]},
+  {code:"CBAS-M04A",nombre:"ÁLGEBRA LINEAL",sem:2,cr:3,prereq:[]},
+  {code:"IMTR-M01A",nombre:"TALLER DE MECATRÓNICA",sem:2,cr:2,prereq:["IMTR-B01A"]},
+  {code:"ISCO-C03A",nombre:"PROGRAMACIÓN",sem:2,cr:3,prereq:["ISCO-C02A"]},
+  {code:"CHUL-LE4A",nombre:"LENGUA EXTRANJERA IV",sem:3,cr:2,prereq:["CHUL-LE3A"]},
+  {code:"CHUM-H02A",nombre:"TALLER DE ESCRITURA ACADÉMICA",sem:3,cr:2,prereq:[]},
+  {code:"CBAS-E01A",nombre:"ESTADÍSTICA Y PROBABILIDAD",sem:3,cr:3,prereq:[]},
+  {code:"CBAS-F02A",nombre:"FÍSICA ELECTRICIDAD Y MAGNETISMO",sem:3,cr:4,prereq:["CBAS-M03A","CBAS-F01A"]},
+  {code:"CBAS-M05A",nombre:"CÁLCULO VECTORIAL",sem:3,cr:4,prereq:["CBAS-M03A","CBAS-M04A"]},
+  {code:"IETR-F02A",nombre:"SISTEMAS DIGITALES I",sem:3,cr:3,prereq:["ISCO-C02A"]},
+  {code:"CHUL-LE5A",nombre:"LENGUA EXTRANJERA V",sem:4,cr:2,prereq:["CHUL-LE4A"]},
+  {code:"CHUM-H03A",nombre:"CONSTITUCIÓN POLÍTICA",sem:4,cr:2,prereq:[]},
+  {code:"CBAS-F03A",nombre:"FÍSICA CALOR Y ONDAS",sem:4,cr:4,prereq:["CBAS-F02A","CBAS-M04A"]},
+  {code:"CBAS-M06A",nombre:"ECUACIONES DIFERENCIALES Y EN",sem:4,cr:4,prereq:["CBAS-M05A"]},
+  {code:"IELE-F03A",nombre:"CIRCUITOS ELÉCTRICOS I",sem:4,cr:3,prereq:["CBAS-F02A"]},
+  {code:"IMEC-D03A",nombre:"ESTÁTICA",sem:4,cr:3,prereq:["CBAS-F01A","CBAS-M04A"]},
+  {code:"IETR-F03A",nombre:"SEÑALES Y SISTEMAS",sem:5,cr:3,prereq:["CBAS-M06A"]},
+  {code:"IMEC-D04A",nombre:"DINÁMICA",sem:5,cr:3,prereq:["IMEC-D03A"]},
+  {code:"IMEC-F08A",nombre:"TERMODINÁMICA Y FLUIDOS",sem:5,cr:3,prereq:["CBAS-M06A"]},
+  {code:"IMEC-M01A",nombre:"MATERIALES I",sem:5,cr:3,prereq:["CBAS-Q01A"]},
+  {code:"ISCO-C07A",nombre:"PROCESAMIENTO NUMÉRICO",sem:5,cr:3,prereq:["ISCO-C03A","CBAS-M06A"]},
+  {code:"AEMP-G04A",nombre:"CREATIVIDAD Y EMPRENDIMIENTO",sem:6,cr:2,prereq:[]},
+  {code:"IETR-C01A",nombre:"CONTROL I",sem:6,cr:3,prereq:["IETR-F03A"]},
+  {code:"IETR-F04A",nombre:"ELECTRÓNICA I",sem:6,cr:3,prereq:["IELE-F03A"]},
+  {code:"IMEC-D06A",nombre:"RESISTENCIAS DE MATERIALES",sem:6,cr:3,prereq:["IMEC-D03A"]},
+  {code:"IMEC-M03A",nombre:"TECNOLOGÍA DE FABRICACIÓN",sem:6,cr:3,prereq:["IMEC-M01A"]},
+  {code:"CHUM-HU1A",nombre:"ELECTIVA DE HUMANIDADES I",sem:7,cr:2,prereq:[]},
+  {code:"ECON-M12A",nombre:"FORMULACIÓN Y EVALUACIÓN DE PROYECTOS",sem:7,cr:3,prereq:["CBAS-E01A"]},
+  {code:"IETR-D03A",nombre:"SISTEMAS EMBEBIDOS",sem:7,cr:3,prereq:["IETR-F02A"]},
+  {code:"IMTR-A01A",nombre:"SENSORES E INSTRUMENTACIÓN",sem:7,cr:3,prereq:["IETR-F04A","IMEC-D06A","IETR-F03A"]},
+  {code:"IMTR-A02A",nombre:"SISTEMAS AUTOMÁTICOS DE PRODUCCIÓN",sem:7,cr:3,prereq:["IMEC-F08A","IETR-F02A","IMTR-M01A"]},
+  {code:"IMTR-EC1A",nombre:"ELECTIVA COMPLEMENTARIA I",sem:7,cr:2,prereq:[]},
+  {code:"CHUM-H05A",nombre:"CIUDADANÍA GLOBAL",sem:8,cr:2,prereq:[]},
+  {code:"IETR-C04A",nombre:"ELECTRÓNICA DE POTENCIA",sem:8,cr:3,prereq:["IETR-F04A"]},
+  {code:"IMTR-A03A",nombre:"ROBÓTICA",sem:8,cr:3,prereq:["IMEC-D04A","IETR-C01A"]},
+  {code:"IMTR-C01A",nombre:"SISTEMAS MECATRÓNICOS PROGRAMABLES",sem:8,cr:3,prereq:["IELE-F03A","IETR-F02A","IMTR-M01A"]},
+  {code:"IMTR-EC2A",nombre:"ELECTIVA COMPLEMENTARIA II",sem:8,cr:2,prereq:[]},
+  {code:"IMTR-P01A",nombre:"PROYECTO DE INGENIERÍA I",sem:8,cr:2,prereq:[]},
+  {code:"CHUM-H04A",nombre:"ÉTICA",sem:9,cr:2,prereq:[]},
+  {code:"IMTR-A04A",nombre:"CONTROL INTELIGENTE",sem:9,cr:3,prereq:["IETR-C01A","IMTR-C01A"]},
+  {code:"IMTR-D01A",nombre:"DISEÑOS MECATRÓNICOS",sem:9,cr:3,prereq:["IMTR-A01A","IMTR-C01A","IMTR-A03A"]},
+  {code:"IMTR-ECA3",nombre:"ELECTIVA COMPLEMENTARIA III",sem:9,cr:2,prereq:[]},
+  {code:"IMTR-ECA4",nombre:"ELECTIVA COMPLEMENTARIA IV",sem:9,cr:2,prereq:[]},
+  {code:"IMTR-P02A",nombre:"PROYECTO DE INGENIERÍA II",sem:9,cr:2,prereq:["IMTR-P01A"]},
+  {code:"CHUM-HU2A",nombre:"ELECTIVA DE HUMANIDADES II",sem:10,cr:2,prereq:[]},
+  {code:"IIND-EE1A",nombre:"ELECTIVA EMPRESARIAL",sem:10,cr:2,prereq:[]},
+  {code:"IMTR-P03A",nombre:"PRÁCTICA PROFESIONAL",sem:10,cr:6,prereq:[]}
 ];
 
-// =============================================
-// ESTADO
-// =============================================
-
-let state = {
-  clases: [],
-  aprobadas: []
-};
+let state = { clases: [], aprobadas: [] };
 
 function loadState() {
-  const raw = localStorage.getItem(STORAGE_KEY);
-  if (!raw) return;
   try {
-    const data = JSON.parse(raw);
+    const data = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
     state.clases = data.clases || [];
     state.aprobadas = data.aprobadas || [];
   } catch(e) {}
@@ -593,30 +435,20 @@ function saveState() {
   updateQuickStats();
 }
 
-// =============================================
-// TABS
-// =============================================
-
 document.querySelectorAll('.tab').forEach(tab => {
   tab.addEventListener('click', () => {
     document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
     tab.classList.add('active');
-
     document.querySelectorAll('section[id^="tab-"]').forEach(s => s.style.display = 'none');
     document.getElementById('tab-' + tab.dataset.tab).style.display = 'block';
-
     if (tab.dataset.tab === 'horario') renderHorario();
-    if (tab.dataset.tab === 'malla')   renderMalla();
+    if (tab.dataset.tab === 'malla') renderMalla();
   });
 });
 
 function goTab(tabName) {
   document.querySelector(`.tab[data-tab="${tabName}"]`).click();
 }
-
-// =============================================
-// UTILIDADES
-// =============================================
 
 function escapeHtml(text) {
   const map = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' };
@@ -636,15 +468,10 @@ function createId() {
   return Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
 }
 
-// =============================================
-// HORARIO
-// =============================================
-
 function renderHorario() {
   const body = document.getElementById('calBody');
   body.innerHTML = '';
 
-  // Columna de horas
   const timeCol = document.createElement('div');
   timeCol.className = 'day-col';
   for (let h = START_HOUR; h < END_HOUR; h++) {
@@ -655,7 +482,6 @@ function renderHorario() {
   }
   body.appendChild(timeCol);
 
-  // Días
   for (let d = 1; d <= 6; d++) {
     const col = document.createElement('div');
     col.className = 'day-col';
@@ -675,16 +501,16 @@ function renderOneClass(cl) {
   const col = document.querySelector(`.day-col[data-day="${cl.dia}"]`);
   if (!col) return;
 
-  const start = hhmmToMin(cl.inicio);
-  const end   = hhmmToMin(cl.fin);
-  const topPx    = minToTop(start);
-  const heightPx = ((end - start) / 60) * SLOT_HEIGHT;
+  const startMin = hhmmToMin(cl.inicio);
+  const endMin   = hhmmToMin(cl.fin);
+  const topPx    = minToTop(startMin);
+  const heightPx = Math.max(44, ((endMin - startMin) / 60) * SLOT_HEIGHT);
 
   const block = document.createElement('div');
   block.className = 'class-block';
-  block.style.top = topPx + 'px';
+  block.style.top    = topPx + 'px';
   block.style.height = heightPx + 'px';
-  block.style.background = `linear-gradient(135deg, ${cl.color}88, ${cl.color}cc)`;
+  block.style.background = `linear-gradient(135deg, ${cl.color || '#b19cf9'}88, ${cl.color || '#b19cf9'}cc)`;
 
   block.innerHTML = `
     <div class="top">
@@ -694,69 +520,36 @@ function renderOneClass(cl) {
     <div style="margin-top:4px; font-size:12px; opacity:0.9;">
       ${cl.inicio} – ${cl.fin} • ${escapeHtml(cl.profe || '—')}
     </div>
+    <div style="margin-top:4px; font-size:11px; opacity:0.7;">
+      ${escapeHtml(cl.nota || '')}
+    </div>
   `;
 
   block.onclick = () => openClassModal(cl.id);
   col.appendChild(block);
 }
 
-// =============================================
-// MODAL CLASE
-// =============================================
-
-let currentEditId = null;
-
 function openClassModal(editId = null) {
-  currentEditId = editId;
-  const cl = editId ? state.clases.find(c => c.id === editId) : null;
+  let cl = editId ? state.clases.find(c => c.id === editId) : null;
 
   const html = `
     <h3>${cl ? 'Editar clase' : 'Nueva clase'}</h3>
-
     <div class="form-grid">
-      <div class="field">
-        <label>Nombre / Materia</label>
-        <input id="c-nombre" value="${cl?.nombre || ''}" placeholder="Ej: Cálculo Diferencial"/>
-      </div>
-      <div class="field">
-        <label>Color</label>
-        <input type="color" id="c-color" value="${cl?.color || '#b19cf9'}"/>
-      </div>
-
-      <div class="field">
-        <label>Día</label>
-        <select id="c-dia">
-          ${DAYS.map((d,i) => `<option value="${i+1}" ${cl?.dia === i+1 ? 'selected' : ''}>${d}</option>`).join('')}
-        </select>
-      </div>
-      <div class="field">
-        <label>Salón</label>
-        <input id="c-salon" value="${cl?.salon || ''}" placeholder="Ej: B-304"/>
-      </div>
-
-      <div class="field">
-        <label>Inicio</label>
-        <input type="time" id="c-inicio" value="${cl?.inicio || '07:00'}"/>
-      </div>
-      <div class="field">
-        <label>Fin</label>
-        <input type="time" id="c-fin" value="${cl?.fin || '09:00'}"/>
-      </div>
-
-      <div class="field">
-        <label>Profesor</label>
-        <input id="c-profe" value="${cl?.profe || ''}" placeholder="Opcional"/>
-      </div>
-      <div class="field">
-        <label>Nota / recordatorio</label>
-        <input id="c-nota" value="${cl?.nota || ''}" placeholder="Ej: Parcial 30%"/>
-      </div>
+      <div class="field"><label>Nombre / Materia</label><input id="c-nombre" value="${cl?.nombre || ''}" required /></div>
+      <div class="field"><label>Color</label><input type="color" id="c-color" value="${cl?.color || '#b19cf9'}" /></div>
+      <div class="field"><label>Día</label><select id="c-dia" required>
+        ${DAYS.map((d,i) => `<option value="${i+1}" ${cl?.dia === (i+1) ? 'selected' : ''}>${d}</option>`).join('')}
+      </select></div>
+      <div class="field"><label>Salón</label><input id="c-salon" value="${cl?.salon || ''}" /></div>
+      <div class="field"><label>Inicio</label><input type="time" id="c-inicio" value="${cl?.inicio || '07:00'}" required /></div>
+      <div class="field"><label>Fin</label><input type="time" id="c-fin" value="${cl?.fin || '09:00'}" required /></div>
+      <div class="field"><label>Profesor</label><input id="c-profe" value="${cl?.profe || ''}" /></div>
+      <div class="field"><label>Nota</label><input id="c-nota" value="${cl?.nota || ''}" /></div>
     </div>
-
     <div class="modal-footer">
-      ${cl ? `<button class="btn btn-danger" onclick="deleteClass()">Eliminar</button>` : ''}
+      ${cl ? `<button class="btn btn-danger" onclick="deleteClass('${cl.id}')">Eliminar</button>` : ''}
       <button class="btn btn-outline" onclick="closeModal()">Cancelar</button>
-      <button class="btn btn-primary" onclick="saveClass()">${cl ? 'Actualizar' : 'Guardar'}</button>
+      <button class="btn btn-primary" onclick="saveClass(${!!cl})">${cl ? 'Actualizar' : 'Guardar'}</button>
     </div>
   `;
 
@@ -764,138 +557,127 @@ function openClassModal(editId = null) {
   document.getElementById('modal').classList.add('show');
 }
 
-function deleteClass() {
-  if (!currentEditId) return;
-  if (!confirm("¿Segura que quieres eliminar esta clase?")) return;
-
-  state.clases = state.clases.filter(c => c.id !== currentEditId);
+window.deleteClass = id => {
+  if (!confirm("¿Eliminar esta clase?")) return;
+  state.clases = state.clases.filter(c => c.id !== id);
   saveState();
   closeModal();
   renderHorario();
-}
+};
 
-function saveClass() {
+window.saveClass = isEdit => {
   const nombre = document.getElementById('c-nombre').value.trim();
-  const color  = document.getElementById('c-color').value;
-  const dia    = Number(document.getElementById('c-dia').value);
-  const salon  = document.getElementById('c-salon').value.trim();
-  const inicio = document.getElementById('c-inicio').value;
-  const fin    = document.getElementById('c-fin').value;
-  const profe  = document.getElementById('c-profe').value.trim();
-  const nota   = document.getElementById('c-nota').value.trim();
-
-  if (!nombre) return alert("Falta el nombre de la materia");
-  if (hhmmToMin(fin) <= hhmmToMin(inicio)) return alert("La hora final debe ser mayor");
-
-  const payload = { nombre, color, dia, salon, inicio, fin, profe, nota };
-
-  if (currentEditId) {
-    const index = state.clases.findIndex(c => c.id === currentEditId);
-    if (index !== -1) {
-      state.clases[index] = { ...state.clases[index], ...payload };
-    }
+  if (!nombre) return alert("Falta el nombre");
+  const payload = {
+    id: isEdit ? state.clases.find(c => c.nombre === nombre)?.id || createId() : createId(),
+    nombre,
+    color: document.getElementById('c-color').value,
+    dia: Number(document.getElementById('c-dia').value),
+    salon: document.getElementById('c-salon').value.trim(),
+    inicio: document.getElementById('c-inicio').value,
+    fin: document.getElementById('c-fin').value,
+    profe: document.getElementById('c-profe').value.trim(),
+    nota: document.getElementById('c-nota').value.trim()
+  };
+  if (hhmmToMin(payload.fin) <= hhmmToMin(payload.inicio)) return alert("Hora final debe ser mayor");
+  if (isEdit) {
+    const idx = state.clases.findIndex(c => c.id === payload.id);
+    if (idx !== -1) state.clases[idx] = payload;
   } else {
-    payload.id = createId();
     state.clases.push(payload);
   }
-
   saveState();
   closeModal();
   renderHorario();
-}
-
-// =============================================
-// MALLA
-// =============================================
+};
 
 function renderMalla() {
   const cont = document.getElementById('malla-container');
   cont.innerHTML = '';
-
   const bySem = {};
   malla.forEach(m => {
-    const s = m.sem;
-    if (!bySem[s]) bySem[s] = [];
+    const s = m.sem || 1;
+    bySem[s] = bySem[s] || [];
     bySem[s].push(m);
   });
-
-  Object.keys(bySem).sort((a,b) => a - b).forEach(sem => {
+  Object.keys(bySem).sort((a,b)=>a-b).forEach(sem => {
     const box = document.createElement('div');
     box.className = 'semestre';
     box.innerHTML = `<h3>Semestre ${sem}</h3>`;
-
     const grid = document.createElement('div');
     grid.className = 'malla-grid';
-
     bySem[sem].forEach(mat => {
       const done = state.aprobadas.includes(mat.code);
       const unlocked = (mat.prereq || []).every(p => state.aprobadas.includes(p));
-
       const el = document.createElement('div');
-      el.className = `materia ${done ? 'done' : ''} ${!unlocked && !done ? 'locked' : ''}`;
+      el.className = `materia${done ? ' done' : ''}${!unlocked && !done ? ' locked' : ''}`;
       el.innerHTML = `
-        <div class="top">
-          <span>${escapeHtml(mat.code)}</span>
-          <span>${mat.cr ? mat.cr + ' cr' : ''}</span>
-        </div>
+        <div class="top"><span>${escapeHtml(mat.code)}</span><span>${mat.cr ? mat.cr + ' cr' : ''}</span></div>
         <div class="name">${escapeHtml(mat.nombre)}</div>
       `;
-
       el.onclick = () => {
         if (done) {
           state.aprobadas = state.aprobadas.filter(c => c !== mat.code);
         } else if (unlocked) {
           state.aprobadas.push(mat.code);
         } else {
-          alert("Faltan prerrequisitos:\n" + (mat.prereq || []).join(", "));
+          alert("Faltan prerrequisitos: " + (mat.prereq || []).join(", "));
           return;
         }
         saveState();
         renderMalla();
       };
-
       el.oncontextmenu = e => {
         e.preventDefault();
-        alert("Prerrequisitos:\n" + ((mat.prereq || []).length ? mat.prereq.join(", ") : "Ninguno"));
+        alert("Prerrequisitos: " + ((mat.prereq || []).length ? mat.prereq.join(", ") : "Ninguno"));
       };
-
       grid.appendChild(el);
     });
-
     box.appendChild(grid);
     cont.appendChild(box);
   });
-
   updateQuickStats();
 }
-
-// =============================================
-// STATS + BOTONES
-// =============================================
 
 function updateQuickStats() {
   document.getElementById('stat-clases').textContent = state.clases.length;
   document.getElementById('stat-aprob').textContent  = state.aprobadas.length;
-
   const total = malla.length || 1;
-  const pct = Math.round((state.aprobadas.length / total) * 100);
-  document.getElementById('stat-prog').textContent = pct + '%';
+  document.getElementById('stat-prog').textContent = Math.round((state.aprobadas.length / total) * 100) + '%';
 }
 
 document.getElementById('btn-savio').onclick = () => window.open('https://savio.utb.edu.co', '_blank');
 
 document.getElementById('btn-export').onclick = () => {
-  const blob = new Blob([JSON.stringify({ ...state, malla }, null, 2)], {type:'application/json'});
+  const blob = new Blob([JSON.stringify({clases: state.clases, aprobadas: state.aprobadas}, null, 2)], {type: 'application/json'});
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
-  a.href = url;
-  a.download = 'utb-lu-backup.json';
-  a.click();
+  a.href = url; a.download = 'utb_planner_backup.json'; a.click();
   URL.revokeObjectURL(url);
 };
 
+document.getElementById('btn-import').onclick = () => document.getElementById('import-file').click();
+
+document.getElementById('import-file').onchange = e => {
+  const file = e.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = ev => {
+    try {
+      const data = JSON.parse(ev.target.result);
+      state.clases = data.clases || [];
+      state.aprobadas = data.aprobadas || [];
+      saveState();
+      renderHorario();
+      renderMalla();
+      alert('Importado correctamente');
+    } catch(err) { alert('Error en el JSON'); }
+  };
+  reader.readAsText(file);
+};
+
 document.getElementById('btn-reset').onclick = () => {
-  if (!confirm("¿Borrar TODO (horario + malla)?")) return;
+  if (!confirm('¿Borrar todo?')) return;
   localStorage.removeItem(STORAGE_KEY);
   state = { clases: [], aprobadas: [] };
   renderHorario();
@@ -908,16 +690,11 @@ function closeModal() {
   document.getElementById('modal').classList.remove('show');
 }
 
-// =============================================
-// INICIO
-// =============================================
-
 loadState();
 renderHorario();
 renderMalla();
 updateQuickStats();
 goTab('home');
-
 </script>
 </body>
 </html>
